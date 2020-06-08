@@ -1,4 +1,5 @@
-'used strict';
+'use strict';
+
 
 let lang = prompt('Введите язык (ru или en)', '');
 

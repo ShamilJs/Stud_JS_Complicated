@@ -18,10 +18,12 @@ const testFunction = function (userData) {
         userData = userData.join(''); //возвращаемся к строке
         let a = userData.split(' ').join(''); //боремся с пробелами
         console.log('Сообщение без пробелов: ', a);
+        console.log(a.length);
 
         if (a.length > 30) {
-            let b = a.split('');
-            b.splice(30, (a.length - 30), '...');
+
+            let b = a.slice(0, 30) + '...';
+
             console.log('Только 30 символов: ', b);
         }
     }

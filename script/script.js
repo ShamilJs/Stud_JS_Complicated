@@ -16,7 +16,7 @@ const testFunction = function (userData) {
         return;
     } else {
         userData = userData.join(''); //возвращаемся к строке
-        let a = userMessage.split(' ').join(''); //боремся с пробелами
+        let a = userData.split(' ').join(''); //боремся с пробелами
         console.log('Сообщение без пробелов: ', a);
 
         if (a.length > 30) {

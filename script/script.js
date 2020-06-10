@@ -1,19 +1,36 @@
 'use strict';
 
-let userMessage = prompt('Введите сообщение', '');
+// 1
 
-const testFunction = function (userData) {
-    if (!!(+userData)) {
-        console.log('Вы ввели не строку, пожалуйста повторите ввод');
-        return;
-    } else {
-        let a = userData.split(' ').join(''); //боремся с пробелами
-        console.log('Сообщение без пробелов: ', a);
+let arr = [
+	'66462132326',
+	'465626123655',
+	'26465323565',
+	'6565945132445',
+	'88989898799',
+	'99999999977',
+	'24562187933',
+];
 
-        if (a.length > 30) {
-            let b = a.slice(0, 30) + '...';
-            console.log('Только 30 символов: ', b);
-        }
-    }
+const checkArr = function () {
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i].startsWith('2') || arr[i].startsWith('4')) {
+			console.log(`Искомое число ${i}:  `, +arr[i]);
+		}
+	}
 };
-testFunction(userMessage);
+checkArr();
+
+// 2
+
+const primeNumber = function (n) {
+	nextIteration: for (let i = 2; i <= n; i++) {
+		for (let j = 2; j < i; j++) {
+			if (i % j === 0) {
+				continue nextIteration;
+			}
+		}
+		console.log(i, `Делители этого числа: 1 и ${i}`);
+	}
+};
+primeNumber(100);

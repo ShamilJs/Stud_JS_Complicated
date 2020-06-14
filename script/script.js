@@ -32,16 +32,32 @@ let appWeekData = {
 
 	getWeekBold: function () {
 		let now = new Date();
-
-		let weekDay = appWeekData.week[now.getDay() + 6];
-
-		appWeekData.week.splice(now.getDay() + 6);
-
+		let indexWeekDay = now.getDay();
+		let weekDay;
+		indexWeekDay = 2;
+		if (indexWeekDay === 0) {
+			indexWeekDay += 6;
+			weekDay = appWeekData.week[indexWeekDay];
+			console.log(
+				`${appWeekData.week.slice(0, indexWeekDay)} %c${weekDay}`,
+				'font-weight: bold'
+			);
+		} else {
+			indexWeekDay--;
+			weekDay = appWeekData.week[indexWeekDay];
+			console.log(
+				`${appWeekData.week.slice(0, indexWeekDay)} %c${weekDay}`,
+				'font-weight: bold',
+				`${appWeekData.week.slice(indexWeekDay + 1)}`
+			);
+		}
 		const newElement = document.createElement('p');
-		newElement.innerHTML = `<p class="new"> ${appWeekData.week}, <b>${weekDay}</b></p>
+		newElement.innerHTML = `<p class="new"> ${appWeekData.week.slice(
+			0,
+			indexWeekDay
+		)} <b>${weekDay}</b> ${appWeekData.week.slice(indexWeekDay + 1)}</p>
 		`;
 		element.append(newElement);
-		console.log(`${appWeekData.week}, %c${weekDay}`, 'font-weight: bold');
 	},
 };
 appWeekData.getWeekConsole();

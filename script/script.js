@@ -34,7 +34,7 @@ let appWeekData = {
 		let now = new Date();
 		let indexWeekDay = now.getDay();
 		let weekDay;
-		indexWeekDay = 2;
+
 		if (indexWeekDay === 0) {
 			indexWeekDay += 6;
 			weekDay = appWeekData.week[indexWeekDay];

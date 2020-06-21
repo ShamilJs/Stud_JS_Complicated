@@ -1,0 +1,16 @@
+.button {
+	height: 50px;
+	width: 500px;
+	display: flex;
+}
+.reg , .autores {
+	
+	height: 80%;
+	color: white;
+	background-color: blue;
+	width: 50%;
+	font-size: 15px;
+}
+.autores {
+	margin-left: 10px; 
+}

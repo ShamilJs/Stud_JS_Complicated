@@ -80,7 +80,7 @@ let appDate = {
 		return appDate.regDate;
 	},
 };
-
+let err = 0;
 
 let dataUser = {
 	getName: function() {
@@ -89,6 +89,7 @@ let dataUser = {
 			do {
 				userName = prompt('Введите имя и фамилию через пробел');
 				if (userName === null) {
+					err++;
 					return;
 				}
 				userName = userName.trim();
@@ -108,6 +109,7 @@ let dataUser = {
 					dataUser.lastNameUser = userName[1];
 				userName = userName.join('');
 			} while (userName === '');
+			console.log(1);
 		userName = userName.split(',');
 		dataUser.getLogin();	
 		},
@@ -162,6 +164,11 @@ renderArray();
 
 reg.addEventListener('click', function(){
 	dataUser.getName();
+	if (err > 0) {
+			err = 0;
+			console.log(err);
+			return;
+		}
 	let newDataUser = {
 			nameUser: dataUser.nameUser,
 			lastNameUser: dataUser.lastNameUser,

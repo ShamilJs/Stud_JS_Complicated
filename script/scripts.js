@@ -81,6 +81,7 @@ let appDate = {
 	},
 };
 
+let err = 0;
 
 let dataUser = {
 	getName: function() {
@@ -89,6 +90,7 @@ let dataUser = {
 			do {
 				userName = prompt('Введите имя и фамилию через пробел');
 				if (userName === null) {
+					err++;
 					return;
 				}
 				userName = userName.trim();
@@ -149,8 +151,8 @@ const renderArray = function () {
 		element.append(li);
 		let buttonRemove = li.querySelector('.btn-remove');
 		buttonRemove.addEventListener('click', function(){
-		arrayUsers.splice(index, 1);
-		renderArray();
+			arrayUsers.splice(index, 1);
+				renderArray();
 		});
 
 
@@ -162,6 +164,10 @@ renderArray();
 
 reg.addEventListener('click', function(){
 	dataUser.getName();
+	if (err > 0) {
+		err = 0;
+		return;
+		}
 	let newDataUser = {
 			nameUser: dataUser.nameUser,
 			lastNameUser: dataUser.lastNameUser,

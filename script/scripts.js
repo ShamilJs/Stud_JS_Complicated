@@ -80,7 +80,6 @@ let appDate = {
 		return appDate.regDate;
 	},
 };
-
 let err = 0;
 
 let dataUser = {
@@ -119,6 +118,7 @@ let dataUser = {
 		do {
 			userLogin = prompt('Введите логин');
 				if (userLogin === null) {
+					err++;
 					return;
 				}
 			userLogin = userLogin.trim();
@@ -132,6 +132,7 @@ let dataUser = {
 		do {
 			userPassword = prompt('Введите пароль');
 				if (userPassword === null) {
+					err++;
 					return;
 				}
 			userPassword = userPassword.trim();
@@ -151,13 +152,13 @@ const renderArray = function () {
 		element.append(li);
 		let buttonRemove = li.querySelector('.btn-remove');
 		buttonRemove.addEventListener('click', function(){
-			arrayUsers.splice(index, 1);
-				renderArray();
+		arrayUsers.splice(index, 1);
+		renderArray();
 		});
 
 
 	});
-let json = JSON.stringify(arrayUsers);
+	let json = JSON.stringify(arrayUsers);
 	localStorage.setItem('json',json);		
 };
 renderArray();
@@ -165,8 +166,8 @@ renderArray();
 reg.addEventListener('click', function(){
 	dataUser.getName();
 	if (err > 0) {
-		err = 0;
-		return;
+			err = 0;
+			return;
 		}
 	let newDataUser = {
 			nameUser: dataUser.nameUser,

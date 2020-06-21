@@ -149,8 +149,8 @@ const renderArray = function () {
 		element.append(li);
 		let buttonRemove = li.querySelector('.btn-remove');
 		buttonRemove.addEventListener('click', function(){
-			arrayUsers.splice(index, 1);
-				renderArray();
+		arrayUsers.splice(index, 1);
+		renderArray();
 		});
 
 

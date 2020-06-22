@@ -109,7 +109,6 @@ let dataUser = {
 					dataUser.lastNameUser = userName[1];
 				userName = userName.join('');
 			} while (userName === '');
-			console.log(1);
 		userName = userName.split(',');
 		dataUser.getLogin();	
 		},
@@ -119,6 +118,7 @@ let dataUser = {
 		do {
 			userLogin = prompt('Введите логин');
 				if (userLogin === null) {
+					err++;
 					return;
 				}
 			userLogin = userLogin.trim();
@@ -132,6 +132,7 @@ let dataUser = {
 		do {
 			userPassword = prompt('Введите пароль');
 				if (userPassword === null) {
+					err++;
 					return;
 				}
 			userPassword = userPassword.trim();
@@ -158,7 +159,7 @@ const renderArray = function () {
 
 	});
 let json = JSON.stringify(arrayUsers);
-	localStorage.setItem('json',json);		
+	localStorage.setItem('json', json);		
 };
 renderArray();
 

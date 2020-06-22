@@ -1,16 +1,24 @@
+
+.div{
+	margin-left: 500px;
+	margin-top: 200px;
+
+}
 .button {
-	height: 50px;
-	width: 500px;
-	display: flex;
+   background: #1e1e1e;
+   border: none;
+   color: #fafafa;
+   font-family: Roboto sans-serif;
+   width: 150px;
+   font-size: 20px;
+   text-align: center;
+   padding: 5px 0;
+   display: block;
 }
-.reg , .autores {
-	
-	height: 80%;
-	color: white;
-	background-color: blue;
-	width: 50%;
-	font-size: 15px;
-}
-.autores {
-	margin-left: 10px; 
+.code-color {
+   text-transform: uppercase;
+   font-size: 35px;
+
+   color: #1e1e1e;
+   font-weight: bold;
 }
